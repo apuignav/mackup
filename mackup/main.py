@@ -5,6 +5,7 @@ Copyright (C) 2013-2015 Laurent Raufaste <http://glop.org/>
 
 Usage:
   mackup list
+  mackup [options] copy
   mackup [options] backup
   mackup [options] restore
   mackup [options] uninstall
@@ -20,12 +21,13 @@ Options:
 
 Modes of action:
  1. list: display a list of all supported applications.
- 2. backup: sync your conf files to your synced storage, use this the 1st time
+ 2. copy: copy your conf files to your synced storage.
+ 3. backup: sync your conf files to your synced storage, use this the 1st time
     you use Mackup. (Note that by default this will sync private keys used by
     OpenSSH and GnuPG.)
- 3. restore: link the conf files already in your synced storage on your system,
+ 4. restore: link the conf files already in your synced storage on your system,
     use it on any new system you use.
- 4. uninstall: reset everything as it was before using Mackup.
+ 5. uninstall: reset everything as it was before using Mackup.
 
 By default, Mackup syncs all application data (including private keys!) via
 Dropbox, but may be configured to exclude applications or use a different
