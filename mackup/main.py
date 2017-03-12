@@ -89,6 +89,19 @@ def main():
             printAppHeader(app_name)
             app.backup()
 
+    elif args['copy']:
+        # Check the env where the command is being run
+        mckp.check_for_usable_backup_env()
+
+        # Backup each application
+        for app_name in sorted(mckp.get_apps_to_backup()):
+            app = ApplicationProfile(mckp,
+                                     app_db.get_files(app_name),
+                                     dry_run,
+                                     verbose)
+            printAppHeader(app_name)
+            app.copy()
+
     elif args['restore']:
         # Check the env where the command is being run
         mckp.check_for_usable_restore_env()
